@@ -12,7 +12,7 @@ int main() {
 	sf::RenderWindow window(sf::VideoMode(1280, 720), "Mandelbrot");
 	window.setFramerateLimit(60);
 
-	RendererO2 render(window.getSize().x, window.getSize().y);
+	RendererO2 render(window.getSize().x, window.getSize().y, false);
 
 	bool redraw = true;
 
