@@ -2,17 +2,23 @@
 #include <SFML/Graphics.hpp>
 #include "UnoptimizedRenderer.h"
 #include "RendererO1.h"
-#include "RendererO2.h"
+#include "SimdRendererO1.h"
+#include "LessBranchesSimdRenderer.h"
+#include "LessBranchesRenderer.h"
 #include <chrono>
 
 using namespace std;
 using namespace chrono;
 
 int main() {
-	sf::RenderWindow window(sf::VideoMode(1280, 720), "Mandelbrot");
+
+	const int width = 1280;
+	const int height = 720;
+
+	sf::RenderWindow window(sf::VideoMode(width, height), "Mandelbrot");
 	window.setFramerateLimit(60);
 
-	RendererO2 render(window.getSize().x, window.getSize().y, false);
+	SimdRendererO1 render(width, height, false);
 
 	bool redraw = true;
 

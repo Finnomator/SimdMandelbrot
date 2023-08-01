@@ -27,7 +27,16 @@
     <ClCompile Include="RendererO1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RendererO2.cpp">
+    <ClCompile Include="SimdRendererO1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LessBranchesSimdRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LessBranchesRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SimdRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,7 +50,16 @@
     <ClInclude Include="RendererO1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RendererO2.h">
+    <ClInclude Include="SimdRendererO1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LessBranchesSimdRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LessBranchesRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SimdRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

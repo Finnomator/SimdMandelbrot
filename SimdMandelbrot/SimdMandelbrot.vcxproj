@@ -19,16 +19,22 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="LessBranchesRenderer.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="RendererO1.cpp" />
     <ClCompile Include="Renderer.cpp" />
-    <ClCompile Include="RendererO2.cpp" />
+    <ClCompile Include="SimdRendererO1.cpp" />
+    <ClCompile Include="LessBranchesSimdRenderer.cpp" />
+    <ClCompile Include="SimdRenderer.cpp" />
     <ClCompile Include="UnoptimizedRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="LessBranchesRenderer.h" />
     <ClInclude Include="RendererO1.h" />
     <ClInclude Include="Renderer.h" />
-    <ClInclude Include="RendererO2.h" />
+    <ClInclude Include="SimdRendererO1.h" />
+    <ClInclude Include="LessBranchesSimdRenderer.h" />
+    <ClInclude Include="SimdRenderer.h" />
     <ClInclude Include="UnoptimizedRenderer.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

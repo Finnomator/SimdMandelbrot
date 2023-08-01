@@ -1,19 +1,10 @@
-#include "RendererO2.h"
+#include "SimdRendererO1.h"
 #include <immintrin.h>
-#include <iostream>
 
-RendererO2::RendererO2(int width, int height, bool double_precision) : Renderer(width, height) {
-	this->double_precision = double_precision;
+SimdRendererO1::SimdRendererO1(int width, int height, bool double_precision) : SimdRenderer(width, height, double_precision) {
 }
 
-void RendererO2::GenerateFractal() {
-	if (double_precision)
-		GenerateFractalDoublePrecision();
-	else
-		GenerateFractalSinglePrecision();
-}
-
-void RendererO2::GenerateFractalDoublePrecision() {
+void SimdRendererO1::GenerateFractalDoublePrecision() {
 
 	const int step_size = 4;
 
@@ -41,7 +32,7 @@ void RendererO2::GenerateFractalDoublePrecision() {
 			__m256i _iteration = _mm256_set1_epi64x(0);
 
 			__m256i _mask2 = _mm256_and_si256(
-				_mm256_castpd_si256(_mm256_cmp_pd(_mm256_add_pd(_mm256_mul_pd(_x, _x), _mm256_mul_pd(_y, _y)), _four, _CMP_LT_OQ)),
+				_mm256_castpd_si256(_mm256_cmp_pd(_mm256_add_pd(_mm256_mul_pd(_x, _x), _mm256_mul_pd(_y, _y)), _four, _CMP_LE_OQ)),
 				_mm256_cmpgt_epi64(_max_iteration, _iteration)
 			);
 
@@ -56,7 +47,7 @@ void RendererO2::GenerateFractalDoublePrecision() {
 
 				_mask2 = _mm256_and_si256(
 					_mm256_and_si256(
-						_mm256_castpd_si256(_mm256_cmp_pd(_mm256_add_pd(_xsqr, _ysqr), _four, _CMP_LT_OQ)),
+						_mm256_castpd_si256(_mm256_cmp_pd(_mm256_add_pd(_xsqr, _ysqr), _four, _CMP_LE_OQ)),
 						_mm256_cmpgt_epi64(_max_iteration, _iteration)
 					), _mask2
 				);
@@ -71,7 +62,7 @@ void RendererO2::GenerateFractalDoublePrecision() {
 	}
 }
 
-void RendererO2::GenerateFractalSinglePrecision() {
+void SimdRendererO1::GenerateFractalSinglePrecision() {
 
 	const int step_size = 8;
 
